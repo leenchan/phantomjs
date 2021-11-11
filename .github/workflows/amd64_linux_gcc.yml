@@ -20,5 +20,5 @@ jobs:
     - run: make check
     - uses: actions/upload-artifact@v2
       with:
-        name: phantomjs
+        name: amd64_linux_gcc
         path: ./bin/phantomjs*

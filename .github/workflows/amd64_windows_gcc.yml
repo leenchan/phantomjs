@@ -30,3 +30,7 @@ jobs:
     - run: file ./bin/phantomjs
     - run: ldd ./bin/phantomjs
     - run: ./bin/phantomjs --version
+    - uses: actions/upload-artifact@v2
+      with:
+        name: amd64_windows_gcc
+        path: ./bin/phantomjs*
