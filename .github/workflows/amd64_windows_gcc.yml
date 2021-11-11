@@ -32,7 +32,7 @@ jobs:
     - run: ./bin/phantomjs --version
     - run: mkdir ./output
     - run: cp ./bin/phantomjs* ./output/
-    - run: ldd ./bin/phantomjs | grep -Eio '/.*\.dll' | while read FILE; do cp "$FILE" ./output/; done
+    - run: ldd ./bin/phantomjs | grep -Eio '/.*\.dll' | xargs cp -t ./output
     - uses: actions/upload-artifact@v2
       with:
         name: amd64_windows_gcc
