@@ -30,7 +30,12 @@ jobs:
     - run: file ./bin/phantomjs
     - run: ldd ./bin/phantomjs
     - run: ./bin/phantomjs --version
+    - run: |
+      mkdir ./output
+      cp ./bin/phantomjs* ./output/
+      ldd ./bin/phantomjs | grep -Eio '/.*\.dll' | while read FILE; do cp "$FILE" ./output/; done
+
     - uses: actions/upload-artifact@v2
       with:
         name: amd64_windows_gcc
-        path: ./
+        path: ./output
