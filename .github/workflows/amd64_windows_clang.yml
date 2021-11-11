@@ -1,6 +1,6 @@
 name: amd64_windows_clang
 
-on: [push, pull_request]
+on: workflow_dispatch
 
 jobs:
 

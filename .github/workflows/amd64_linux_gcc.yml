@@ -1,6 +1,6 @@
 name: amd64_linux_gcc
 
-on: [push, pull_request]
+on: workflow_dispatch
 
 jobs:
 
